@@ -19,12 +19,15 @@ PY_PN=${PN//-/_} # if this var defined, pip use the var for searching package di
 DESCRIPTION="Recognize faces from Python or from the command line"
 HOMEPAGE="https://pypi.python.org/pypi/face_recognition" # if pip couldn't find package in PY_INDEX stll, this is the last try
 
-# for some packages not following pip rules, you still can specify download link in SRU_URI. but mind the order if there's multiple links, links order must be same as PYTHON_COMPAT
+# for some packages not following pip rules, you still can specify download link in SRU_URI. 
+# but mind the order if there's multiple links, links order must be same as PYTHON_COMPAT
+# if there's provided links only for python2 and python3 normally, just add two links
 # SRC_URI="link-for-python2.7
 #	link-for-python3.4
 #	link-for-python3.5
 #	link-for-python3.6
 # " 
+pip-r1_init_pkg_fetch # very important!!! make sure this line stay at bottom of all vars mention above, cause it would processed for portage
 ```
 
 # TODO
